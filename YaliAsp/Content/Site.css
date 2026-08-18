@@ -1,0 +1,203 @@
+﻿body {
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* רקע כהה המזכיר כביש אספלט בלילה או סיבי פחמן (Carbon Fiber) */
+    background: linear-gradient(135deg, #2b2b2b 0%, #111111 100%);
+    background-attachment: fixed;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+/* אפקט חלון רכב מושחר (Tinted Window) ולוח מחוונים למיכל המרכזי */
+.body-content {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    /* מסגרת אדומה המזכירה פנסי אחוריים של רכב ספורט */
+    border: 1px solid #e60000;
+    box-shadow: 0 15px 35px rgba(230, 0, 0, 0.15);
+    max-width: 1000px;
+}
+
+/* עיצוב התפריט בסגנון גריל קדמי רכב ספורט */
+.navbar {
+    background: #000000 !important;
+    border-bottom: 4px solid #e60000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+    /* קו דקורטיבי מתחת לכותרת המזכיר מד סל"ד (RPM) */
+    h1::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 5px;
+        /* מעבר צבעים מאדום לכתום (קו אדום בסל"ד) */
+        background: linear-gradient(to left, #e60000, #f39c12);
+        margin: 15px auto;
+        border-radius: 3px;
+    }
+
+/* =========================================
+   עיצוב פאנל מידע ספורטיבי וכהה (התיבה של הטקסט)
+   ========================================= */
+
+.engine-info-box {
+    background: rgba(10, 10, 10, 0.7) !important; /* שחור שקוף למחצה */
+    border: 1px solid #333;
+    border-right: 4px solid #e60000 !important; /* פס אדום ספורטיבי בצד ימין */
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 5px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+}
+
+    /* מוודא שכל הטקסטים בתוך התיבה יקבלו צבע בהיר */
+    .engine-info-box p,
+    .engine-info-box h2,
+    .engine-info-box h3,
+    .engine-info-box span {
+        color: #f1f1f1 !important;
+        text-shadow: 1px 1px 2px #000; /* צל עדין לטקסט כדי שיבלוט */
+        line-height: 1.6;
+    }
+
+/* =========================================
+   עיצוב טבלאות ומערכת שעות
+   ========================================= */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+th {
+    /* עיצוב כהה ואגרסיבי לכותרות הטבלה */
+    background: linear-gradient(to bottom, #333333, #1a1a1a) !important;
+    color: #ffffff;
+    padding: 18px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+/* צבעי המקצועות - מותאמים לצבעי רכבים ספורטיביים עם אפקט "האצה" בריחוף */
+.math, .chemistrey, .hebrew, .english, .hinuch, .sport, .tora, .his, .comp {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+    .math:hover, .chemistrey:hover, .hebrew:hover, .english:hover, .hinuch:hover, .sport:hover, .tora:hover, .his:hover, .comp:hover {
+        transform: scale(1.03) translateX(-5px); /* אפקט זינוק קדימה */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        filter: brightness(1.2); /* הדלקת אורות */
+    }
+
+/* צהוב למבורגיני */
+.math {
+    background-color: #e5a904 !important;
+    color: #000;
+}
+
+/* ירוק ניאון בסגנון מרוצי רחוב */
+.chemistrey {
+    background-color: #39ff14 !important;
+    color: #000;
+}
+
+/* כסוף מטאלי (כרום) */
+.hebrew {
+    background-color: #71797e !important;
+}
+
+/* כחול סובארו ראלי */
+.english {
+    background-color: #021aee !important;
+}
+
+/* כתום מקלארן */
+.hinuch {
+    background-color: #ff5500 !important;
+}
+
+/* אדום פרארי */
+.sport {
+    background-color: #e32636 !important;
+}
+
+/* כחול חצות אלגנטי */
+.tora {
+    background-color: #191970 !important;
+}
+
+/* אפור אספלט בהיר */
+.his {
+    background-color: #4a4a4a !important;
+}
+
+/* שחור פחמן (Carbon) עם נגיעה אדומה */
+.comp {
+    background-color: #2b1111 !important;
+    border-right: 4px solid #e32636;
+}
+
+
+/* =========================================
+   שדות קלט ותמונות
+   ========================================= */
+
+/* אנימציית לחיצה לשדות קלט - מדמה לחיצה על דוושת גז */
+input:focus, textarea:focus {
+    transform: translateY(2px);
+    transition: 0.2s;
+    outline: none;
+    border-color: #e60000;
+    box-shadow: 0 0 8px rgba(230, 0, 0, 0.5);
+    background-color: #fff;
+    color: #000;
+}
+
+.imgCell {
+    width: 120px;
+    height: 80px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: #000;
+}
+
+.bigPicImg {
+    width: 250px;
+    height: 170px;
+    border: 3px solid #e60000; /* מסגרת אדומה ספורטיבית */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="YaliAsp.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>עולם הרכבים והמכוניות</title>
+    <script src="Scripts/CheckMyForm.js"></script>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <%--header place holder שומר מקום--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--    < end of place  holder שומר מקום >--%>
+</head>
+<body>
+<form method="post" runat="server" onsubmit="return chkForm();">
+
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage1.aspx">עמוד ראשי</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage2.aspx">מנוע המכונית</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage3.aspx">תיבת הילוכים</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage4.aspx">בקרת אקלים</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage5.aspx">מערכות בטיחות</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage6.aspx">מערכת קירור</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage7.aspx">מערכת שימון</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="InfoPage8.aspx">מערכת בלמים</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="PictureGallery.aspx">גלריית תמונות</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="timetable.aspx">מערכת שעות</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="SignUp.aspx">הרשמה</a></li>
+                         <li class="nav-item"><a class="nav-link" runat="server" href="AdminPage.aspx">מנהל</a></li>
+                         <li class="nav-item"><a class="nav-link" runat="server" href="LoginAdmin.aspx">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content mt-4">
+            <%--content place holder--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <%--end of content place holder--%>
+        </div>
+    </form>
+</body>
+</html>

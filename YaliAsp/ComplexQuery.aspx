@@ -1,0 +1,176 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ComplexQuery.aspx.cs" Inherits="YaliAsp.ComplexQuery" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="Scripts/ComplexQuery.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form id="form1" method="post" runat="server">
+        <script>
+            function detectfield1() {
+                if (document.getElementById("field1").value == "gndr"); {
+                    document.getElementById("query1").immerHTML =
+                        "<input type='radio' name='value1' value='male' checked='checked' /> זכר" +
+                        "<input type='radio' name='value1' value='female'/> נקבה";
+                }
+                else
+                {
+                    if (document.getElementById("field1").value == "yearBorn") {
+                        var yearStr = "<select name='value1'><option value'0'>בחר שנה</option>";>;
+                        var currYear = new Date().getFullYear();
+                        var fromYear = currYear - 40;
+                        var toYear = currYear - 10;
+                        for (var i = fromYear; i <= toYear; i++) {
+                            yearStr += "<option value='" + i + "'>" + i + "</option>\n";
+                        }
+                        document.getElementById("query1").innerHTML = yearStr + "</select>";
+                    }
+                    else
+                        if (document.getElementById("field1").value == "prefix") {
+                            var prefixStr = "<select name='value1'>";
+
+                            prefixStr += "<option value ='050'>050</option>";
+                            prefixStr += "<option value ='052'>052</option>";
+                            prefixStr += "<option value ='054'>054</option>";
+                            prefixStr += "<option value ='057'>057</option>";
+                            prefixStr += "<option value ='077'>077</option>";
+                            prefixStr += "<option value ='03'>03</option>";
+                            prefixStr += "<option value ='02'>02</option>";
+                            prefixStr += "<option value ='04'>04</option>";
+                            prefixStr += "<option value ='08'>08</option>";
+                            prefixStr += "<option value ='09'>09</option>";
+
+                            prefixStr += "</select>";
+
+                            document.getElementById("query1").innerHTML = prefixStr;
+                        }
+                        else
+                            if (document.getElementById("field1").value == "hobby") {
+                                var hobbyStr = "<select name='value1'>";
+                                hobbyStr += "<option value ='1'>Computers</option>";
+                                hobbyStr += "<option value ='2'>Music</option>";
+                                hobbyStr += "<option value ='3'>Movies</option>";
+                                hobbyStr += "<option value ='4'>TV</option>";
+                                hobbyStr += "<option value ='5'>Horses</option>";
+                                hobbyStr += "</select>";
+
+                                document.getElementById("query1").innerHTML = hobbyStr;
+                            }
+                            else {
+                                document.getElementById("query1").innerHTML =
+                                    "<input type='text' name='value1' />";
+                            }
+                }
+            }
+            function detectfield2() {
+                if (document.getElementById("field2").value == "gndr"); {
+                    document.getElementById("query2").immerHTML =
+                        "<input type='radio' name='value1' value='male' checked='checked' /> זכר" +
+                        "<input type='radio' name='value1' value='female'/> נקבה";
+                }
+    else
+                {
+                    if (document.getElementById("field2").value == "yearBorn") {
+                        var yearStr = "<select name='value2'><option value'0'>בחר שנה</option>";>;
+                        var currYear = new Date().getFullYear();
+                        var fromYear = currYear - 40;
+                        var toYear = currYear - 10;
+                        for (var i = fromYear; i <= toYear; i++) {
+                            yearStr += "<option value='" + i + "'>" + i + "</option>\n";
+                        }
+                        document.getElementById("query2").innerHTML = yearStr + "</select>";
+                    }
+                    else
+                        if (document.getElementById("field2").value == "prefix") {
+                            var prefixStr = "<select name='value2'>";
+
+                            prefixStr += "<option value ='050'>050</option>";
+                            prefixStr += "<option value ='052'>052</option>";
+                            prefixStr += "<option value ='054'>054</option>";
+                            prefixStr += "<option value ='057'>057</option>";
+                            prefixStr += "<option value ='077'>077</option>";
+                            prefixStr += "<option value ='03'>03</option>";
+                            prefixStr += "<option value ='02'>02</option>";
+                            prefixStr += "<option value ='04'>04</option>";
+                            prefixStr += "<option value ='08'>08</option>";
+                            prefixStr += "<option value ='09'>09</option>";
+
+                            prefixStr += "</select>";
+
+                            document.getElementById("query2").innerHTML = prefixStr;
+                        }
+                        else
+                            if (document.getElementById("field2").value == "hobby") {
+                                var hobbyStr = "<select name='value2'>";
+                                hobbyStr += "<option value ='1'>Computers</option>";
+                                hobbyStr += "<option value ='2'>Music</option>";
+                                hobbyStr += "<option value ='3'>Movies</option>";
+                                hobbyStr += "<option value ='4'>TV</option>";
+                                hobbyStr += "<option value ='5'>Horses</option>";
+                                hobbyStr += "</select>";
+
+                                document.getElementById("query2").innerHTML = hobbyStr;
+                            }
+                            else {
+                                document.getElementById("query2").innerHTML =
+                                    "<input type='text' name='value2' />";
+                            }
+                }
+            }
+        </script>
+        <table border="1">
+            <tr>
+                <td style="width: 20px">
+                    <select name="field1" id="field1" onclick="detectfield1(); ">
+                        <optiom value="lName">שם משפחה</optiom>
+                        <option value="fName">שם פרטי</option>
+                        <option value="email">דוא'ל</option>
+                        <option value="gender">מגדר</option>
+                        <option value="yearBorn">שנת לידה</option>
+                        <option value="yearFrom">משנה</option>
+                        <option value="prefix">קידומת טלפון</option>
+                        <option value="phone">טלפון</option>
+                        <option value="hobby">תחביב</option>
+                    </select>
+                </td>
+                <td style="width: 150px;">
+                    <div id="query1" style="text-align: center;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>colspan ="2" style="text-align: center; direction: ltr;">
+                    <input type="radio" name="op" value="and" checked="checked" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    input type="radio" name ="op" value="or"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20px">
+                    <select name="field2" id="field2" onclick="detectfield2(); ">
+                        <optiom value="lName">שם משפחה</optiom>
+                        <option value="fName">שם פרטי</option>
+                        <option value="email">דוא'ל</option>
+                        <option value="gender">מגדר</option>
+                        <option value="yearBorn">שנת לידה</option>
+                        <option value="yearFrom">משנה</option>
+                        <option value="prefix">קידומת טלפון</option>
+                        <option value="phone">טלפון</option>
+                        <option value="hobby">תחביב</option>
+                    </select>
+                </td>
+                <td>
+                    <div id="query2" style="text-align: center;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="חפש" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table>
+        <%= st %>
+    </table>
+    <h3><%=msg %></h3>
+</asp:Content>
